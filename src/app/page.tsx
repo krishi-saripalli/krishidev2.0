@@ -24,10 +24,10 @@ export const metadata: Metadata = {
         <div className=' px-3 h-full gap-3 flex flex-col justify-start items-center lg:items-start'>
             <Paragraph className='max-w-xl text-left'>
               I am an undergraduate student at Brown University studying mathematics and computer science. My research and
-              career interests lie primarily in computer graphics, vision, image processing and machine learning. I'm
+              career interests lie primarily in computer graphics, vision, image processing and machine learning. I&apos;m
               a student researcher in the <Link href="https://visual.cs.brown.edu/" className='underline'>Brown Visual Computing</Link> group where I am advised by  <Link className='underline' href="https://dritchie.github.io/">Daniel Ritchie</Link>.
               I am a teaching assistant and course developer for many courses at Brown, but most recently, I will be working on <Link href="https://cs1230.graphics/" className='underline'>CSCI1230</Link>.
-              This summer, I'll be a software engineering intern at <Link href="https://coinbase.com/" className='underline'>Coinbase</Link>.
+              This summer, I&apos;ll be a software engineering intern at <Link href="https://coinbase.com/" className='underline'>Coinbase</Link>.
             </Paragraph>
             <Paragraph className='max-w-xl text-left'>
               The best way to get in touch with me is through email at <Link href="" className='underline'>ksaripal@cs.brown.edu</Link>. The second

@@ -2,8 +2,6 @@
 import { getServerSession } from 'next-auth'
 
 import Link from 'next/link'
-import SignInButton from './SignInButton'
-import SignOutButton from './SignOutButton'
 import { buttonVariants } from './Button'
 import { authOptions } from '@/app/lib/auth'
 
