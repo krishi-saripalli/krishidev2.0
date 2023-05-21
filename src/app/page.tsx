@@ -8,10 +8,8 @@ import { PageAnimateWrapper } from './components/PageAnimateWrapper'
 import Animation from './components/ui/animation/Blob'
 
 
-// import 
-
 export const metadata: Metadata = {
-  title: 'About Me | Admissions Counseling',
+  title: 'Home | Krishi Saripalli',
   description: 'About Myself',
 
 }

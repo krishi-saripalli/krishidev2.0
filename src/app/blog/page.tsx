@@ -9,7 +9,7 @@ import { PageAnimateWrapper } from '../components/PageAnimateWrapper'
 
 
 export const metadata: Metadata = {
-  title: 'About Me | Admissions Counseling',
+  title: 'Blog | Krishi Saripalli',
   description: 'About Myself',
 
 }
@@ -28,6 +28,7 @@ export const metadata: Metadata = {
         <div className='px-3 h-full gap-3 flex flex-col justify-start items-center lg:items-start'>
           <LargeHeading size='sm'
             className='text-black'>Blog</LargeHeading>
+            Work in progress...
         </div>
      </div>
   </div>
