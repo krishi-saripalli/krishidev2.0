@@ -36,7 +36,7 @@ export const metadata: Metadata = {
               cooking, longboarding and planning my return to woodworking.
             </Paragraph>
         </div>
-        <div className=' w-full md:w-1/2 h-full'><Animation></Animation></div>
+        <div className='collapse lg:visible w-full md:w-1/2 h-full'><Animation></Animation></div>
         
      </div>
   </div>
