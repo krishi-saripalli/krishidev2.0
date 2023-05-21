@@ -16,7 +16,7 @@ const Projects: FC = ({}: any) => {
     <PageAnimateWrapper>
       <div className=" relative h-screen flex items-center justify-center overflow-x-hidden">
         <div className="container pt-32 max-w-7xl w-full mx-auto h-full">
-          <div className="text-white h-full gap-3 flex flex-col justify-start items-center lg:items-start">
+          <div className="text-white h-full gap-3 flex flex-col justify-start items-start">
             <LargeHeading size="sm" className="">
               Blog
             </LargeHeading>

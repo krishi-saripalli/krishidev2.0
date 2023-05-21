@@ -22,9 +22,6 @@ export default function RootLayout({
         <main className="px-5">{children}</main>
         {/*allow for more height on mobile */}
         {/* <div className='h-40 md:hidden'></div> */}
-        <footer className="text-white text-sm py-10 flex justify-center">
-          Krishi Saripalli 2023
-        </footer>
       </body>
     </html>
   );
