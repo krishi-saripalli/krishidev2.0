@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 const About: FC = () => {
   return (
     <PageAnimateWrapper>
-      <div className=" relative h-screen flex items-center justify-center overflow-x-hidden">
+      <div className=" relative h-screen flex items-center justify-center overflow-x-hidden ">
         <div className="flex flex-col items-center lg:flex-row pt-32 max-w-7xl w-full mx-auto h-full">
-          <div className="h-full gap-3 flex flex-col justify-start items-center lg:items-start">
+          <div className="h-full lg:h-full gap-3 flex flex-col justify-start items-center lg:items-start ">
             <Paragraph className="max-w-xl text-left">
               I am an undergraduate student at Brown University studying
               mathematics and computer science. My research and career interests
@@ -58,7 +58,7 @@ const About: FC = () => {
               my return to woodworking.
             </Paragraph>
           </div>
-          <div className="collapse lg:visible w-full md:w-1/2 h-full">
+          <div className="h-full w-full lg:w-1/2 flex-grow shrink-0 ">
             <Animation></Animation>
           </div>
         </div>
