@@ -19,7 +19,7 @@ export default function RootLayout({
       <body className=" bg-gradient-to-r from-zinc-700 to-neutral-800 min-h-screen">
         {/* @ts-expect-error Server Component */}
         <Navbar />
-        <main className="px-5">{children}</main>
+        <main className="mx-5">{children}</main>
         {/*allow for more height on mobile */}
         {/* <div className='h-40 md:hidden'></div> */}
       </body>
