@@ -2,30 +2,30 @@ import Image from "next/image";
 import { Metadata } from "next";
 import Link from "next/link";
 import { FC } from "react";
-import LargeHeading from "../components/ui/LargeHeading";
 import Paragraph from "../components/ui/Paragraph";
 import { PageAnimateWrapper } from "../components/PageAnimateWrapper";
+import BlurredCard from "../components/ui/PostPreview";
+import { getPostMetadata } from "../lib/utils";
 
 export const metadata: Metadata = {
   title: "Blog | Krishi Saripalli",
-  description: "About Myself",
+  description: "A list of blog posts",
 };
 
-const Projects: FC = ({}: any) => {
+const postMetaData = getPostMetadata();
+const postPreviews = postMetaData.map((metadata) => (
+  <BlurredCard key={metadata.slug} metadata={metadata} />
+));
+const PostPreviews: FC = ({}: any) => {
   return (
     <PageAnimateWrapper>
-      <div className="text-white relative h-screen flex items-center justify-center overflow-x-hidden">
-        <div className="container pt-32 max-w-7xl w-full mx-auto h-full">
-          <div className=" h-full gap-3 flex flex-col justify-start items-start">
-            <LargeHeading size="sm" className="">
-              Blog
-            </LargeHeading>
-            Work in progress...
-          </div>
+      <div className="flex text-white relative h-full ">
+        <div className="mx-auto flex w-full max-w-prose flex-col justify-start py-32">
+          {postPreviews}
         </div>
       </div>
     </PageAnimateWrapper>
   );
 };
 
-export default Projects;
+export default PostPreviews;

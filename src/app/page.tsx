@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Metadata } from "next";
 import Link from "next/link";
 import { FC } from "react";
-import LargeHeading from "./components/ui/LargeHeading";
 import Paragraph from "./components/ui/Paragraph";
 import { PageAnimateWrapper } from "./components/PageAnimateWrapper";
 import Animation from "./components/ui/animation/Blob";
@@ -15,10 +14,10 @@ export const metadata: Metadata = {
 const About: FC = () => {
   return (
     <PageAnimateWrapper>
-      <div className="text-white relative h-screen flex items-center justify-center overflow-x-hidden ">
-        <div className="flex flex-col items-center lg:flex-row pt-32 max-w-7xl w-full mx-auto h-full">
-          <div className="h-full gap-3 flex flex-col justify-start items-center md:items-start ">
-            <Paragraph className="max-w-xl text-left">
+      <div className="flex text-white relative h-full ">
+        <div className="mx-auto flex w-full max-w-prose flex-col justify-start py-32">
+          <div className="mx-auto h-full">
+            <Paragraph className="max-w-xl text-left pb-4">
               I am an undergraduate student at Brown University studying
               mathematics and computer science. My research and career interests
               lie primarily in computer graphics, vision, image processing and
@@ -41,7 +40,7 @@ const About: FC = () => {
               </Link>
               .
             </Paragraph>
-            <Paragraph className="max-w-xl text-left">
+            <Paragraph className="max-w-xl text-left pb-4">
               The best way to get in touch with me is through email at{" "}
               <Link href="" className="underline">
                 ksaripal@cs.brown.edu
@@ -52,14 +51,11 @@ const About: FC = () => {
               </Link>
               .
             </Paragraph>
-            <Paragraph className="max-w-xl text-left">
+            <Paragraph className="max-w-xl text-left pb-4">
               I grew up in many different places, but I call California my home.
               I spend vast amounts of my time cooking, longboarding and planning
               my return to woodworking.
             </Paragraph>
-          </div>
-          <div className="h-full w-full lg:w-1/2 shrink-0 ">
-            <Animation></Animation>
           </div>
         </div>
       </div>
