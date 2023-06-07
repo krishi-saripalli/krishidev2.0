@@ -8,7 +8,7 @@ import Markdown from "markdown-to-jsx";
 import { getPostMetadata } from "@/app/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Projects | Krishi Saripalli",
+  title: "Blog | Krishi Saripalli",
   description: "About Myself",
 };
 
