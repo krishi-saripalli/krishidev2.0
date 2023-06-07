@@ -11,13 +11,13 @@ import matter from "gray-matter";
 import { PostMetadata } from "../components/PostMetadata";
 
 export const getPostMetadata = (): PostMetadata[] => {
-  const folder = "public/data/";
+  const folder = "data/";
   const files = fs.readdirSync(folder);
   const markdownPosts = files.filter((file) => file.endsWith(".md"));
 
   // Get gray-matter data from each file.
   const posts = markdownPosts.map((fileName) => {
-    const fileContents = fs.readFileSync(`public/data/${fileName}`, "utf8");
+    const fileContents = fs.readFileSync(`data/${fileName}`, "utf8");
     const matterResult = matter(fileContents);
     return {
       title: matterResult.data.title,
@@ -35,19 +35,14 @@ export const getPostMetadata = (): PostMetadata[] => {
 
 
 export const getPostContent = (slug: string) => {
-    const folder = "public/data/";
+    const folder = "data/";
     const file = `${folder}${slug}.md`;
     const content = fs.readFileSync(file, "utf8");
     const matterResult = matter(content);
     return matterResult;
   };
   
-  export const generateStaticParams = async () => {
-    const posts = getPostMetadata();
-    return posts.map((post) => ({
-      slug: post.slug,
-    }));
-  };
+
 
 
   

@@ -16,8 +16,8 @@ const About: FC = () => {
     <PageAnimateWrapper>
       <div className="flex text-white relative h-full ">
         <div className="mx-auto flex w-full max-w-prose flex-col justify-start py-32">
-          <div className="mx-auto h-full">
-            <Paragraph className="max-w-xl text-left pb-4">
+          <div className="mx-auto max-w-prose  h-full">
+            <Paragraph className="text-left pb-4">
               I am an undergraduate student at Brown University studying
               mathematics and computer science. My research and career interests
               lie primarily in computer graphics, vision, image processing and
@@ -40,7 +40,7 @@ const About: FC = () => {
               </Link>
               .
             </Paragraph>
-            <Paragraph className="max-w-xl text-left pb-4">
+            <Paragraph className="text-left pb-4">
               The best way to get in touch with me is through email at{" "}
               <Link href="" className="underline">
                 ksaripal@cs.brown.edu
@@ -51,7 +51,7 @@ const About: FC = () => {
               </Link>
               .
             </Paragraph>
-            <Paragraph className="max-w-xl text-left pb-4">
+            <Paragraph className="text-left pb-4">
               I grew up in many different places, but I call California my home.
               I spend vast amounts of my time cooking, longboarding and planning
               my return to woodworking.
