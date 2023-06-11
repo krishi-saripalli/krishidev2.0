@@ -14,12 +14,12 @@ const Navbar = async () => {
         </Link>
 
         <div className="flex  gap-2">
-          {/* <Link
-            href="/projects"
+          <Link
+            href="https://github.com/krishi-saripalli"
             className={buttonVariants({ variant: "ghost" })}
           >
-            Projects
-          </Link> */}
+            GitHub
+          </Link>
           <Link href="/blog" className={buttonVariants({ variant: "ghost" })}>
             Blog
           </Link>
