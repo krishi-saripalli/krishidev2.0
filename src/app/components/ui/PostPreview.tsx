@@ -12,22 +12,22 @@ const PostPreview: React.FC<PostPreviewProps> = ({
   metadata: { title, date, subtitle, slug },
 }) => {
   return (
-    <div className="pb-12 items-start text-white w-full overflow-hidden">
-      <div className="align-baseline">
-        <div className="flex justify-between items-baseline">
-          <Link href={/blog/ + slug} className="text-lg md:text-xl lg:text-2xl">
-            {title}
-          </Link>
-          <div>
-            <p className="opacity-50 text-xs md:text-sm">{date}</p>
+    <Link href={/blog/ + slug}>
+      <div className="p-3 pb-12 items-start rounded-md hover:bg-white hover:bg-opacity-20 transition ease-in-out text-white w-full overflow-hidden">
+        <div className="align-baseline">
+          <div className="flex justify-between items-baseline">
+            <div className="text-lg md:text-xl lg:text-2xl">{title}</div>
+            <div>
+              <p className="opacity-50 text-xs md:text-sm">{date}</p>
+            </div>
+          </div>
+          <hr className="pb-3" />
+          <div className="opacity-75 text-sm md:text-md lg:text-lg">
+            {subtitle}
           </div>
         </div>
-        <hr className="pb-3" />
-        <div className="opacity-75 text-sm md:text-md lg:text-lg">
-          {subtitle}
-        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
