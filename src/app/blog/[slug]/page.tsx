@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Metadata } from "next";
 import Link from "next/link";
 import { FC } from "react";
-import { PageAnimateWrapper } from "@/app/components/PageAnimateWrapper";
 import { getPostContent } from "@/app/lib/utils";
 import Markdown from "markdown-to-jsx";
 import { getPostMetadata } from "@/app/lib/utils";
@@ -23,7 +22,6 @@ const Post: FC = (props: any) => {
   const slug = props.params.slug;
   const post = getPostContent(slug);
   return (
-    <PageAnimateWrapper>
       <div className="flex text-white relative h-full ">
         <div className="mx-auto flex w-full max-w-prose flex-col justify-start py-32">
           <div className=" text-white w-full overflow-hidden">
@@ -45,7 +43,6 @@ const Post: FC = (props: any) => {
           </div>
         </div>
       </div>
-    </PageAnimateWrapper>
   );
 };
 

@@ -7,13 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
-      animation: {
-        'spin-slow': 'spin 9s linear infinite',
+      keyframes: {
+        'fade-in': {
+          'from': { opacity: '0' },
+          'to': { opacity: '1' },
+        },
+        
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      animation: {
+        'fade-slide': 'fade-in 0.5s ease-in-out' ,
       },
     },
   },

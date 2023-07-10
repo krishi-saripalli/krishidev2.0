@@ -2,4 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
+/* Slide animation */
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Combine fade and slide */
+.fade-slide {
+  animation: fade-in 0.3s ease-in-out, slide-in 0.3s ease-in-out;
+}
