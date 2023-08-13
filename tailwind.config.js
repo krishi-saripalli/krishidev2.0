@@ -6,20 +6,8 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      keyframes: {
-        'fade-in': {
-          'from': { opacity: '0' },
-          'to': { opacity: '1' },
-        },
-        
-      },
-      animation: {
-        'fade-slide': 'fade-in 0.5s ease-in-out' ,
-      },
-    },
-  },
   plugins: [
     require('@tailwindcss/typography'),
   ],
+}
 }
