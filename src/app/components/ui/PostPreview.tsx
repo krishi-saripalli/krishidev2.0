@@ -13,7 +13,7 @@ const PostPreview: React.FC<PostPreviewProps> = ({
 }) => {
   return (
     <Link href={/blog/ + slug}>
-      <div className="p-3 pb-12 items-start rounded-md hover:bg-white hover:bg-opacity-20 transition ease-in-out text-white w-full overflow-hidden">
+      <div className="p-3 items-start rounded-md hover:bg-white hover:bg-opacity-20 transition ease-in-out text-white w-full overflow-hidden">
         <div className="align-baseline">
           <div className="flex justify-between items-baseline">
             <div className="text-lg md:text-xl lg:text-2xl">{title}</div>
