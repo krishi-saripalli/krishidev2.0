@@ -15,7 +15,7 @@ export default function RootLayout({
       lang="en"
       className={classname("bg-black antialiased", inter.className)}
     >
-      <body className=" bg-gradient-to-r from-slate-800 to-neutral-900 min-h-screen">
+      <body className=" bg-black min-h-screen">
         {/* @ts-expect-error Server Component */}
         <Navbar className="" />
         <main className="px-5">{children}</main>

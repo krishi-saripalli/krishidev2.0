@@ -4,3 +4,10 @@ export interface PostMetadata {
     subtitle: string;
     slug: string;
   }
+
+export interface WorkMetadata {
+  title: string;
+  subtitle: string;
+  img: string;
+  link: string;
+}

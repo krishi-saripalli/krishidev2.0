@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Metadata } from "next";
 import Link from "next/link";
 import { FC } from "react";
@@ -16,10 +15,10 @@ const About: FC = () => {
       <div className="mx-auto flex w-full max-w-prose flex-col justify-start py-32">
         <div className="mx-auto max-w-prose  h-full">
           <Paragraph className="text-left pb-4">
-            I am an undergraduate student at Brown University studying
-            mathematics and computer science. My research and career interests
-            lie primarily in computer graphics, vision, image processing and
-            machine learning. I&apos;m a student researcher in the{" "}
+            I am a fourth-year undergraduate student at Brown studying computer
+            science. My research and career interests lie primarily in computer
+            graphics, vision, image processing and machine learning. I&apos;m a
+            student researcher in the{" "}
             <Link href="https://visual.cs.brown.edu/" className="underline">
               Brown Visual Computing
             </Link>{" "}
@@ -32,7 +31,7 @@ const About: FC = () => {
             <Link href="https://cs1230.graphics/" className="underline">
               CSCI1230
             </Link>
-            . This summer, I&apos;ll be a software engineering intern at{" "}
+            . Previously, I was a software engineer intern at{" "}
             <Link href="https://coinbase.com/" className="underline">
               Coinbase
             </Link>
