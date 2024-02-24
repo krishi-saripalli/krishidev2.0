@@ -15,12 +15,9 @@ export default function RootLayout({
       lang="en"
       className={classname("bg-black antialiased", inter.className)}
     >
-      <body className=" bg-black min-h-screen">
-        {/* @ts-expect-error Server Component */}
-        <Navbar className="" />
+      <body className=" dot-mask  min-h-screen">
+        <Navbar />
         <main className="px-5">{children}</main>
-        {/*allow for more height on mobile */}
-        {/* <div className='h-40 md:hidden'></div> */}
       </body>
     </html>
   );
