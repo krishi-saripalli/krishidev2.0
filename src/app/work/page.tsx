@@ -1,8 +1,5 @@
-import Image from "next/image";
 import { Metadata } from "next";
-import Link from "next/link";
 import { FC } from "react";
-import BlurredCard from "../components/ui/PostPreview";
 import { getWorkMetadata } from "../lib/utils";
 import WorkPreview from "../components/ui/WorkPreview";
 

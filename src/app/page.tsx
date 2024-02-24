@@ -26,11 +26,6 @@ const About: FC = () => {
             <Link className="underline" href="https://dritchie.github.io/">
               Daniel Ritchie
             </Link>
-            . I am a teaching assistant and course developer for many courses at
-            Brown, but most recently, I will be working on{" "}
-            <Link href="https://cs1230.graphics/" className="underline">
-              CSCI1230
-            </Link>
             . Previously, I was a software engineer intern at{" "}
             <Link href="https://coinbase.com/" className="underline">
               Coinbase
