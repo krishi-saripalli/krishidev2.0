@@ -13,9 +13,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={classname("bg-black antialiased", inter.className)}
+      className={classname("bg-black antialiased dot-mask", inter.className)}
     >
-      <body className=" dot-mask  min-h-screen">
+      <body className="   min-h-screen">
         <Navbar />
         <main className="px-5">{children}</main>
       </body>
