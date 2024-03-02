@@ -13,11 +13,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={classname("bg-black antialiased dot-mask", inter.className)}
+      className={classname(
+        "bg-gradient-to-r from-blue-800 to-neutral-600 min-h-screen w-full antialiased ",
+        inter.className
+      )}
     >
-      <body className="   min-h-screen">
+      <body className="">
         <Navbar />
-        <main className="px-5">{children}</main>
+        <main className="px-5 w-full">{children}</main>
       </body>
     </html>
   );

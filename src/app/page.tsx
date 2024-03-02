@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { FC } from "react";
 import Paragraph from "./components/ui/Paragraph";
-import Animation from "./components/ui/animation/Blob";
 
 export const metadata: Metadata = {
   title: "Home | Krishi Saripalli",
@@ -11,9 +10,9 @@ export const metadata: Metadata = {
 
 const About: FC = () => {
   return (
-    <div className="flex text-white relative h-full ">
+    <div className="flex text-white relative">
       <div className="mx-auto flex w-full max-w-prose flex-col justify-start py-32">
-        <div className="mx-auto max-w-prose  h-full">
+        <div className="mx-auto max-w-prose">
           <Paragraph className="text-left pb-4">
             I am a fourth-year undergraduate student at Brown studying computer
             science. My research and career interests lie primarily in computer

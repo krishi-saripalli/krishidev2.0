@@ -20,7 +20,7 @@ const Post: FC = (props: any) => {
   const slug = props.params.slug;
   const post = getPostContent(slug);
   return (
-    <div className="flex text-white relative h-full ">
+    <div className="flex text-white relative ">
       <div className="mx-auto flex w-full max-w-prose flex-col justify-start py-32">
         <div className=" text-white w-full overflow-hidden">
           <div>
