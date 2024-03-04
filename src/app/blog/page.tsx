@@ -1,8 +1,5 @@
-import Image from "next/image";
 import { Metadata } from "next";
-import Link from "next/link";
 import { FC } from "react";
-import Paragraph from "../components/ui/Paragraph";
 import BlurredCard from "../components/ui/PostPreview";
 import { getPostMetadata } from "../lib/utils";
 
