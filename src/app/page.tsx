@@ -34,7 +34,7 @@ const About: FC = () => {
           <Paragraph className="text-left pb-4">
             The best way to get in touch with me is through email at{" "}
             <Link href="" className="underline">
-              ksaripal@cs.brown.edu
+              kts@brown.edu
             </Link>
             . The second best way is{" "}
             <Link href="https://twitter.com/krishi_sa" className="underline">
