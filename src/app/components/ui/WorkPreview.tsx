@@ -21,6 +21,7 @@ const WorkPreview: React.FC<WorkPreviewProps> = ({
           height="0"
           className="w-full h-auto"
           unoptimized = {true}
+          priority = {true}
         ></Image>
         <div className="align-baseline">
           <div className="flex justify-between items-baseline">
