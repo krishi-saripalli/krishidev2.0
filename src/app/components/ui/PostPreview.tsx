@@ -22,7 +22,7 @@ const PostPreview: React.FC<PostPreviewProps> = ({
             </div>
           </div>
           <hr className="pb-3" />
-          <div className="opacity-75 text-sm md:text-md lg:text-lg">
+          <div className="opacity-75 italic text-sm md:text-md lg:text-lg">
             {subtitle}
           </div>
         </div>

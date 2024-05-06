@@ -1,6 +1,6 @@
 ---
-title: "One Noise to Rule Them All: Learning a Unified Model of Spatially-Varying Noise Patterns"
-subtitle: ACM Transactions on Graphics (Proceedings of SIGGRAPH) 2024
+title: "One Noise to Rule Them All: Learning a Unified Model of Spatially-Varying Noise Patterns (SIGGRAPH 2024)"
+subtitle: Arman Maesumi, Dylan Hu, Krishi Saripalli, Vladimir Kim, Matthew Fisher, Sören Pirk, and Daniel Ritchie
 img: /noise.png
-link: https://arxiv.org/abs/2404.16292
+link: https://armanmaesumi.github.io/onenoise/
 ---

@@ -20,15 +20,15 @@ const WorkPreview: React.FC<WorkPreviewProps> = ({
           width="0"
           height="0"
           className="w-full h-auto"
-          unoptimized = {true}
-          priority = {true}
+          unoptimized={true}
+          priority={true}
         ></Image>
         <div className="align-baseline">
           <div className="flex justify-between items-baseline">
             <div className="text-lg md:text-xl lg:text-2xl">{title}</div>
           </div>
           <hr className="pb-3" />
-          <div className="opacity-75 text-sm md:text-md lg:text-lg">
+          <div className="opacity-75 italic text-sm md:text-md lg:text-lg">
             {subtitle}
           </div>
         </div>
