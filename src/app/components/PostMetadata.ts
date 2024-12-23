@@ -8,6 +8,5 @@ export interface PostMetadata {
 export interface WorkMetadata {
   title: string;
   subtitle: string;
-  img: string;
   link: string;
 }

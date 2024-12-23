@@ -1,6 +1,6 @@
 ---
 title: Napa
-subtitle: An Unexpected Encounter With Two Kind People
+subtitle: An unexpected encounter with two kind people
 date: 06/09/2023
 ---
 
@@ -8,12 +8,9 @@ A few weeks ago, my girlfriend and I drove out to Napa County to try drinking in
 
 We only had about 2 hours to settle into our new room before we hurried over to downtown Napa to make it in time for our reservation at [Torc](https://www.torcnapa.com/). As far as I can tell, Torc does not make any claims about belonging to a particular cuisine, but the easiest box to place them in would probably be New American. I'm hesitant to leave it at that because it usually conjures up images of steak and potatoes, when what we experienced was so much more. I think very few people are good at describing how good food tastes, and I am not one of them, so instead I'll leave you with the one picture I took during our meal.
 
-
 ![Yummy Desert](/rhubarb.png)
 
 As we got seated and ordered wine, a middle-aged couple sitting next to us took notice of our date and asked if we wanted some pictures. We happily obliged and watched as the man went <em>outside</em> of the restaurant in order to take a creative picture of us through the glass of the outer wall. We joked about how it was all just a ploy for them to steal my phone and run away, and then returned to our meals shortly thereafter.
-
-
 
 The night went on and food started coming to our table, which along with the wine, kept us more than busy enough to forget the noise coming from the table on the other side of the couple. It wasn't until our glasses were empty and the food was gone that the screeching laugh of the two women sitting across from the couple began to become impossible to drown out. From what we could tell, it was two moms on a night out, enjoying way too much Chardonnay while bursting out laughing at things that no one else seemed to find funny. The couple, in all of their politeness, decided to make small talk with the two women when they inevitably introduced themselves.
 

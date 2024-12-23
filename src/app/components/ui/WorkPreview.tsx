@@ -9,26 +9,18 @@ interface WorkPreviewProps {
 }
 
 const WorkPreview: React.FC<WorkPreviewProps> = ({
-  metadata: { title, subtitle, img, link },
+  metadata: { title, subtitle, link },
 }) => {
   return (
     <Link href={link}>
-      <div className=" grid sm:grid-rows-2 md:grid-cols-2 md:grid-rows-1 gap-5 p-3 items-start rounded-md hover:bg-white hover:bg-opacity-20 transition ease-in-out text-white w-full overflow-hidden">
-        <Image
-          src={img}
-          alt=""
-          width="0"
-          height="0"
-          className="w-full h-auto"
-          unoptimized={true}
-          priority={true}
-        ></Image>
-        <div className="align-baseline">
-          <div className="flex justify-between items-baseline">
-            <div className="text-lg md:text-xl lg:text-2xl">{title}</div>
+      <div className="flex p-3 rounded-md hover:bg-white hover:bg-opacity-20 transition ease-in-out text-white">
+        <div className="flex flex-col ">
+          <div className="text-lg md:text-xl lg:text-2xl text-left">
+            {title}
           </div>
-          <hr className="pb-3" />
-          <div className="opacity-75 italic text-sm md:text-md lg:text-lg">
+          <hr className="pb-1" />
+
+          <div className="opacity-75 italic text-xs md:text-sm lg:text-lg text-left">
             {subtitle}
           </div>
         </div>
