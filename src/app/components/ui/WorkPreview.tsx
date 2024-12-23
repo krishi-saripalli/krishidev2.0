@@ -13,7 +13,7 @@ const WorkPreview: React.FC<WorkPreviewProps> = ({
 }) => {
   return (
     <Link href={link}>
-      <div className="flex p-3 rounded-md hover:bg-white hover:bg-opacity-20 transition ease-in-out text-white">
+      <div className="flex p-3 hover:bg-white hover:bg-opacity-20 transition ease-in-out text-white">
         <div className="flex flex-col ">
           <div className="text-lg md:text-xl lg:text-2xl text-left">
             {title}
