@@ -14,7 +14,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={classname(
-        "bg-gradient-to-r from-blue-800 to-neutral-600 min-h-screen w-full antialiased ",
+        "bg-gradient-to-r bg-slate-950 min-h-screen w-full antialiased ",
         inter.className
       )}
     >
