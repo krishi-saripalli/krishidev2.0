@@ -11,11 +11,11 @@ Fall 2023: Leave of Absence - Employment</em>." I've mostly put my interests in 
 
 Independent of the types of jobs I'm looking for, I've come up with a list of underlying reasons for my leave of absence, which I want to write about both for myself and others who may find themselves questioning whether a semester away from school is right for them.
 
-## The Economy Sucks
+### The Economy Sucks
 
 The job market as a new graduate is pretty terrible at the time of writing this. Even at a school like Brown, people have had offers pulled from them due to huge slashes in hiring budgets, which don't seem to be slowing down anytime soon. In order to mitigate the risk of having an offer pulled, and to wait for more opportunities to open back up, I've decided to wait out the storm by taking the Fall off.
 
-## Startups Are a (Better) Group Project
+### Startups Are a (Better) Group Project
 
 This probably goes without saying, but if you want to become a better engineer, a job practicing how to build software in a clean and effective manner is pretty much unbeatable. I'm being careful not to mix this up with the whole "CS education isn't pragmatic enough" crowd, with whom I wholeheartedly disagree. Working a job, especially at a rapidly growing company, is one of the best ways to sharpen technical skills that you've picked up from coursework, which I've already observed almost immediately after starting my summer internship.
 
@@ -23,14 +23,14 @@ In particular, I'm drawn to the idea of working at an early-stage venture staffe
 
 The unfortunate truth about project-based work at school is that for every great whiteboard epiphany comes 8 hours of lecture, logistics and <em>other</em> work that, although necessary, is not nearly as inspiring.
 
-## Taking Care of Yourself is Tough
+### Taking Care of Yourself is Tough
 
 This Fall presents a new opportunity to redevelop good personal habits. Hit the gym, cook more, but also just allow myself some time to do absolutely nothing.
 
-I began to notice a decline in my own self-care practices towards the middle of my junior Spring semester. Eating junk food for dinner every other day, skipping the gym for multiple days in a row, forgetting to floss before going to bed. Certainly nothing to worried about, especially given that I've just described the average routine of an engineering student in any moderately rigorous college program. But just because its common doesn't mean it's acceptable. Constant junk food and sedentary life wasn't normal for <em>me</em>, which was enough reason to be worried that my coursework was forcing me to compromise on important parts of my lifestyle that I would otherwise adhere to.
+I began to notice a decline in my own self-care practices towards the middle of my junior Spring semester. Eating junk food for dinner every other day, skipping the gym for multiple days in a row, forgetting to floss before going to bed. Certainly nothing to worried about, especially given that I've just described the average routine of an engineering student in any moderately rigorous college program. But just because its common doesn't mean it's acceptable. Constant junk food and sedentary life wasn't normal for <em> me</em>, which was enough reason to be worried that my coursework was forcing me to compromise on important parts of my lifestyle that I would otherwise adhere to.
 
 Maybe a more serious and final warning that I was taking it too far with classes is when I wasn't able to complete an assigned project in one of my classes after staying up for multiple nights in a row on about 20 hours of sleep for the week. Mid-semester me wrote it off as my own incompetence and stupidity. One of those things was true, which is that I was stupid enough to ignore my own personal limits in favor of a "sexier" course load with more difficult classes. I did learn a ton this past semester, probably more than any other, but at the cost of my physical and mental health. As I've explained to people in my life, it was, in many ways, a great experience to load up on tough classes alongside other obligations like research and TAing—but only this once. If I make the same mistake again when I come back in the Spring after knowing what I know now, then shame on me.
 
-## Adding Some Time for Research
+### Adding Some Time for Research
 
 I thoroughly enjoyed starting graphics research at [Brown Visual Computing](https://visual.cs.brown.edu/) last semester and can't wait to continue working on my current project, but I can't help but feel that I started research a little late. An extra semester before graduation provides a larger window for me to work on research within my group and hopefully publish some work along the way.
