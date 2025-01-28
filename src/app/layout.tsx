@@ -14,13 +14,14 @@ export default function RootLayout({
     <html
       lang="en"
       className={classname(
-        "bg-gradient-to-r bg-slate-950 min-h-screen w-full antialiased ",
+        "overscroll-none bg-white w-full antialiased ",
         inter.className
       )}
     >
-      <body className="">
+      <body className="min-h-screen flex flex-col">
         <Navbar />
-        <main className="px-5 w-full">{children}</main>
+        <main className="px-5 w-full flex-grow">{children}</main>
+        <footer className="bg-tertiary border-t border-primary border-dashed h-20"></footer>
       </body>
     </html>
   );

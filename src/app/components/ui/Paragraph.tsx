@@ -3,20 +3,17 @@ import { HTMLAttributes } from "react";
 import * as React from "react";
 import { classname } from "../../lib/utils";
 
-export const paragraphVariants = cva(
-  "max-w-prose text-white mb-2 text-center",
-  {
-    variants: {
-      size: {
-        default: "text-base sm:text-lg ",
-        sm: "text-sm sm:text-base",
-      },
+export const paragraphVariants = cva("max-w-prose mb-2 text-center", {
+  variants: {
+    size: {
+      default: "text-base text-xl md:text-2xl ",
+      sm: "text-sm sm:text-base",
     },
-    defaultVariants: {
-      size: "default",
-    },
-  }
-);
+  },
+  defaultVariants: {
+    size: "default",
+  },
+});
 
 interface ParagraphProps
   extends HTMLAttributes<HTMLParagraphElement>,
