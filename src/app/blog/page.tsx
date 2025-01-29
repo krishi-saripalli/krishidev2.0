@@ -14,8 +14,8 @@ const postPreviews = postMetaData.map((metadata) => (
 ));
 const PostPreviews: FC = ({}: any) => {
   return (
-    <div className="flex text-white relative ">
-      <div className=" mx-auto flex w-full max-w-prose flex-col justify-start py-32">
+    <div className="flex text-primary relative ">
+      <div className="mx-auto flex w-full max-w-prose flex-col justify-start py-32">
         {postPreviews}
       </div>
     </div>

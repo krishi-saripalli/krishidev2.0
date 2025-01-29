@@ -7,7 +7,7 @@ export function classname(...inputs: ClassValue[]) {
 
 import fs from "fs";
 import matter from "gray-matter";
-import { PostMetadata, WorkMetadata } from "../components/PostMetadata";
+import { PostMetadata } from "../components/PostMetadata";
 
 export const getPostMetadata = (): PostMetadata[] => {
   const folder = "data/blog/";
@@ -29,29 +29,6 @@ export const getPostMetadata = (): PostMetadata[] => {
 
   return sortedPosts;
 };
-
-
-
-export const getWorkMetadata = (): WorkMetadata[] => {
-  const folder = "data/work/";
-  const files = fs.readdirSync(folder);
-  const markdownWorks = files.filter((file) => file.endsWith(".md"));
-
-  // Get gray-matter data from each file.
-  const works = markdownWorks.map((fileName) => {
-    const fileContents = fs.readFileSync(`data/work/${fileName}`, "utf8");
-    const matterResult = matter(fileContents);
-    return {
-      title: matterResult.data.title,
-      subtitle: matterResult.data.subtitle,
-      img: matterResult.data.img,
-      link: matterResult.data.link
-    };
-  });
-
-  return works;
-};
-
 
 
 export const getPostContent = (slug: string) => {
