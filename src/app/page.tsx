@@ -35,16 +35,13 @@ const About: FC = () => {
             </Link>
           </Paragraph>
           <Paragraph className="text-left pb-4">
-            The best way to get in touch with me is through email at{" "}
-            <Link href="" className="">
-              kts[at]brown[dot]edu
-            </Link>
-            . The second best way is{" "}
+            The best way to get in touch with me is
+             at <span className="whitespace-nowrap">kts[at]brown[dot]edu</span>.
+            The second best way is{" "}
             <Link href="https://twitter.com/krishi_sa" className="underline underline-offset-4 decoration-dashed decoration-2">
               Twitter
-            </Link>
-            .
-          </Paragraph>
+            </Link>.
+        </Paragraph>
           <Paragraph className="text-left pb-4">
             I grew up in many different places, but I call California my home. I
             spend vast amounts of my time cooking, longboarding and planning my
