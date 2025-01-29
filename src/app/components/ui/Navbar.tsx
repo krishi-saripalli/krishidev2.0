@@ -22,14 +22,14 @@ const Navbar: React.FC = () => {
           <Link
             href="/blog"
             className={`${
-              isActive("/blog") ? " text-primary" : " text-secondary"
-            } hover:text-primary transition duration-300`}
+              isActive("/blog") ? " text-secondary" : " text-primary"
+            } hover:text-secondary transition duration-300`}
           >
             Blog
           </Link>
           <Link
             href="https://github.com/krishi-saripalli"
-            className=" text-secondary  active:text-primary hover:text-primary transition duration-300"
+            className=" text-primary  active:text-secondary hover:text-secondary transition duration-300"
           >
             GitHub
           </Link>

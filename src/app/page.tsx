@@ -12,25 +12,25 @@ const About: FC = () => {
   return (
     <div className="flex text-primary relative">
       <div className="mx-auto flex w-full max-w-prose flex-col justify-start py-32">
-        <div className="mx-auto max-w-prose">
+        <div className="mx-auto max-w-prose ">
           <Paragraph className="text-left pb-4">
             I&#39;m an engineer at{" "}
-            <Link href="https://bezi.com/" className="underline">
+            <Link href="https://bezi.com/" className="underline underline-offset-4 decoration-dashed decoration-2  ">
               Bezi
             </Link>{" "}
-            , where I work on tools to help designers and developers build games
+            , where I work on tools to help people build games
             faster. I graduated from Brown University with a degree in Computer
             Science. There, I worked in the{" "}
-            <Link href="https://visual.cs.brown.edu/" className="underline">
+            <Link href="https://visual.cs.brown.edu/" className="underline underline-offset-4 decoration-dashed decoration-2 ">
               Brown Visual Computing
             </Link>{" "}
-            group on procedural material synthesis and generative modelling.{" "}
-            group Previously, I worked at{" "}
-            <Link href="https://moderntreasury.com/" className="underline">
+            group on procedural materials and generative modelling.{" "}
+            Previously, I worked at{" "}
+            <Link href="https://moderntreasury.com/" className="underline underline-offset-4 decoration-dashed decoration-2 ">
               Modern Treasury
             </Link>{" "}
             and{" "}
-            <Link href="https://coinbase.com/" className="underline">
+            <Link href="https://coinbase.com/" className="underline underline-offset-4 decoration-dashed decoration-2 ">
               Coinbase
             </Link>
           </Paragraph>
@@ -40,7 +40,7 @@ const About: FC = () => {
               kts[at]brown[dot]edu
             </Link>
             . The second best way is{" "}
-            <Link href="https://twitter.com/krishi_sa" className="underline">
+            <Link href="https://twitter.com/krishi_sa" className="underline underline-offset-4 decoration-dashed decoration-2">
               Twitter
             </Link>
             .

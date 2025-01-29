@@ -7,6 +7,21 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        fadeInDown: {
+          '0%': {
+            transform: 'translateY(1%)',
+            opacity: '0'
+          },
+          '100%': {
+            transform: 'translateY(0%)',
+            opacity: '1'
+          }
+        }
+      },
+      animation: {
+        fadeInDown: 'fadeInDown 0.4s'
+      },
       colors: {
         primary: '#0b47c8',    
         secondary: '#64748b',
@@ -20,7 +35,11 @@ module.exports = {
         DEFAULT: {
           css: {
             a: {
-              color: '#0b47c8',  // Using your primary color
+              color: '#0b47c8',
+              textDecoration: 'underline',
+              textUnderlineOffset: '4px',
+              textDecorationStyle: 'dashed',
+              textDecorationWidth: '2px',
               '&:hover': {
                 color: '#0b47c8',
               },
@@ -53,4 +72,8 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
   ],
+}
+
+a: {
+  '@apply text-[#0b47c8] underline underline-offset-4 decoration-dashed decoration-2 hover:text-[#0b47c8]'
 }
