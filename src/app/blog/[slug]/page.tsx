@@ -27,7 +27,7 @@ const Post: FC = (props: any) => {
             <p className="font-primary pb-3 text-2xl md:text-3xl lg:text-5xl font-medium">
               {post.data.title}
             </p>
-            <p className="pb-3 text-l md:text-xl lg:text-2xl opacity-75 italic">
+            <p className="pb-3 text-l md:text-xl lg:text-2xl opacity-80 italic">
               {post.data.subtitle}
             </p>
             <p className="pb-3 opacity-50 text-sm md:text-lg italic">

@@ -16,7 +16,7 @@ const PostPreview: React.FC<PostPreviewProps> = ({
       <div className=" hover:bg-tertiary text-primary p-3 items-start  hover:bg-opacity-70 transition ease-in-out  w-full overflow-hidden">
         <div className="align-baseline">
           <div className="flex justify-between items-baseline">
-            <div className="font-primary text-xl md:text-3xl">{title}</div>
+            <div className="font-primary text-2xl md:text-3xl">{title}</div>
           
           </div>
           <div className="border-b border-primary border-dashed pb-3" />

@@ -25,7 +25,7 @@ module.exports = {
       colors: {
         primary: '#0b47c8',    
         secondary: '#64748b',
-        tertiary: '#e1ecfa',
+        tertiary: '#f7faff',
       },
       fontFamily: {
         primary: ['Lora', 'serif'],

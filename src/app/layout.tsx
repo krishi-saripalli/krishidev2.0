@@ -20,7 +20,9 @@ export default function RootLayout({
     >
       <body className=" overscroll-none min-h-screen flex flex-col">
         <Navbar />
-        <main className="px-5 w-full flex-grow">{children}</main>
+        <main className="px-5 w-full flex-grow ">
+          {children}
+          </main>
         <footer className="bg-tertiary border-t border-primary border-dashed h-20"></footer>
       </body>
     </html>
