@@ -23,7 +23,7 @@ const Post: FC = (props: any) => {
     <div className="flex  relative ">
       <div className="mx-auto flex w-full max-w-prose flex-col justify-start py-32">
         <div className=" text-primary  w-full overflow-hidden">
-          <div className="animate-fadeInDown">
+          <div className="">
             <p className="font-primary pb-3 text-2xl md:text-3xl lg:text-5xl font-medium">
               {post.data.title}
             </p>
