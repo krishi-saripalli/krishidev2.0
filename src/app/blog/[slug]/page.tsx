@@ -27,10 +27,10 @@ const Post: FC = (props: any) => {
             <p className="font-primary pb-3 text-2xl md:text-3xl lg:text-5xl font-medium">
               {post.data.title}
             </p>
-            <p className="pb-3 text-l md:text-xl lg:text-2xl opacity-80 italic">
+            <p className="font-secondary pb-3 text-l md:text-xl lg:text-2xl opacity-80 ">
               {post.data.subtitle}
             </p>
-            <p className="pb-3 opacity-50 text-sm md:text-lg italic">
+            <p className="font-secondary pb-3 opacity-50 text-sm md:text-lg ">
               {post.data.date}
             </p>
             <div className="border-b border-primary border-dashed pb-3" />

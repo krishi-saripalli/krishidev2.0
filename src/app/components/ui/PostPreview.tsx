@@ -17,10 +17,9 @@ const PostPreview: React.FC<PostPreviewProps> = ({
         <div className="align-baseline">
           <div className="flex justify-between items-baseline">
             <div className="font-primary text-2xl md:text-3xl">{title}</div>
-          
           </div>
           <div className="border-b border-primary border-dashed pb-3" />
-          <div className="opacity-75 italic text-sm md:text-md lg:text-lg">
+          <div className="opacity-75 font-secondary text-sm md:text-md lg:text-lg">
             {subtitle}
           </div>
         </div>

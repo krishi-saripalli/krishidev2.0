@@ -28,8 +28,8 @@ module.exports = {
         tertiary: '#f7faff',
       },
       fontFamily: {
-        primary: ['Lora', 'serif'],
-        secondary: ['Merriweather', 'serif'],
+        primary: ['Lora', 'var(--font-lora)', 'serif'],
+        secondary: ['Bitter', 'var(--font-bitter)', 'serif'],
       },
       typography: {
         DEFAULT: {
@@ -46,22 +46,22 @@ module.exports = {
             },
             h1: {
               color: '#0b47c8',
-              fontFamily: 'Lora, serif',
+              fontFamily: 'Bitter, serif',
               fontWeight: 'normal',
             },
             h2: {
               color: '#0b47c8',
-              fontFamily: 'Lora, serif',
+              fontFamily: 'Bitter, serif',
               fontWeight: 'normal',
             },
             h3: {
               color: '#0b47c8',
-              fontFamily: 'Lora, serif',
+              fontFamily: 'Bitter, serif',
               fontWeight: 'normal',
             },
             h4: {
               color: '#0b47c8',
-              fontFamily: 'Lora, serif',
+              fontFamily: 'Bitter, serif',
               fontWeight: 'normal',
             }
           },
