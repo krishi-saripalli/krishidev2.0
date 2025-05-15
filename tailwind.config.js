@@ -23,7 +23,7 @@ module.exports = {
         fadeInDown: 'fadeInDown 0.4s ease-out'
       },
       colors: {
-        primary: '#0b47c8',    
+        primary: '#0b47c8', // royal blue
         secondary: '#64748b',
         tertiary: '#f7faff',
       },
