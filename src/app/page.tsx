@@ -15,33 +15,49 @@ const About: FC = () => {
         <div className="mx-auto max-w-prose ">
           <Paragraph className="text-left pb-4">
             I&#39;m an engineer at{" "}
-            <Link href="https://bezi.com/" className="underline underline-offset-4 decoration-dashed decoration-2  ">
+            <Link
+              href="https://bezi.com/"
+              className="text-primary hover:text-primary underline underline-offset-8 decoration-dashed decoration-2"
+            >
               Bezi
             </Link>{" "}
-            , where I work on tools to help people build games
-            faster. I graduated from Brown University with a degree in Computer
-            Science. There, I worked in the{" "}
-            <Link href="https://visual.cs.brown.edu/" className="underline underline-offset-4 decoration-dashed decoration-2 ">
+            , where I work on tools to help people build games faster. I
+            graduated from Brown University with a degree in Computer Science.
+            There, I worked in the{" "}
+            <Link
+              href="https://visual.cs.brown.edu/"
+              className="text-primary hover:text-primary underline underline-offset-8 decoration-dashed decoration-2"
+            >
               Brown Visual Computing
             </Link>{" "}
-            group on procedural materials and generative modelling.{" "}
-            Previously, I worked at{" "}
-            <Link href="https://moderntreasury.com/" className="underline underline-offset-4 decoration-dashed decoration-2 ">
+            group on procedural materials and generative modelling. Previously,
+            I worked at{" "}
+            <Link
+              href="https://moderntreasury.com/"
+              className="text-primary hover:text-primary underline underline-offset-8 decoration-dashed decoration-2"
+            >
               Modern Treasury
             </Link>{" "}
             and{" "}
-            <Link href="https://coinbase.com/" className="underline underline-offset-4 decoration-dashed decoration-2 ">
+            <Link
+              href="https://coinbase.com/"
+              className="text-primary hover:text-primary underline underline-offset-8 decoration-dashed decoration-2"
+            >
               Coinbase
             </Link>
           </Paragraph>
           <Paragraph className="text-left pb-4">
-            The best way to get in touch with me is
-             at <span className="whitespace-nowrap">kts[at]brown[dot]edu</span>.
-            The second best way is{" "}
-            <Link href="https://twitter.com/krishi_sa" className="underline underline-offset-4 decoration-dashed decoration-2">
+            The best way to get in touch with me is at{" "}
+            <span className="whitespace-nowrap">kts[at]brown[dot]edu</span>. The
+            second best way is{" "}
+            <Link
+              href="https://twitter.com/krishi_sa"
+              className="text-primary hover:text-primary underline underline-offset-8 decoration-dashed decoration-2"
+            >
               Twitter
-            </Link>.
-        </Paragraph>
+            </Link>
+            .
+          </Paragraph>
           <Paragraph className="text-left pb-4">
             I grew up in many different places, but I call California my home. I
             spend vast amounts of my time cooking, longboarding and planning my

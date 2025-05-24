@@ -27,10 +27,10 @@ const Navbar: React.FC = () => {
           <div className="hidden md:flex gap-6 text-md md:text-l lg:text-xl">
             <Link
               href="/blog"
-              className={`font-secondary group-hover:text-white transition-colors duration-300 ${
+              className={`font-secondary transition-colors duration-300 ${
                 isActive("/blog")
-                  ? "text-white md:text-secondary"
-                  : "text-white md:text-primary"
+                  ? "text-white md:text-primary group-hover:text-white underline underline-offset-8 decoration-dashed decoration-2"
+                  : "text-white md:text-primary group-hover:text-white hover:underline hover:underline-offset-8 hover:decoration-dashed hover:decoration-2"
               }`}
             >
               Blog
@@ -52,14 +52,14 @@ const Navbar: React.FC = () => {
               <span
                 className={`w-6 h-0.5 bg-white absolute transition-all duration-300 transform ${
                   isMenuOpen
-                    ? "rotate-45 scale-75"
+                    ? "rotate-45 scale-85"
                     : "translate-y-[-4px] scale-100"
                 }`}
               />
               <span
                 className={`w-6 h-0.5 bg-white absolute transition-all duration-300 transform ${
                   isMenuOpen
-                    ? "-rotate-45 scale-75"
+                    ? "-rotate-45 scale-85"
                     : "translate-y-[4px] scale-100"
                 }`}
               />
@@ -80,7 +80,9 @@ const Navbar: React.FC = () => {
           <Link
             href="/blog"
             className={`font-secondary text-white transition-colors duration-300 ${
-              isActive("/blog") ? "text-secondary" : ""
+              isActive("/blog")
+                ? "underline underline-offset-8 decoration-dashed decoration-2"
+                : "hover:underline hover:underline-offset-8 hover:decoration-dashed hover:decoration-2"
             }`}
             onClick={() => setIsMenuOpen(false)}
           >

@@ -75,5 +75,5 @@ module.exports = {
 }
 
 a: {
-  '@apply text-[#0b47c8] underline underline-offset-4 decoration-dashed decoration-2 hover:text-[#0b47c8]'
+  '@apply text-[#0b47c8] underline underline-offset-8 decoration-dashed decoration-2 hover:text-[#0b47c8]'
 }
