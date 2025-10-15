@@ -15,12 +15,11 @@ export const generateStaticParams = async () => {
     slug: post.slug,
   }));
 };
-
-const Post: FC = (props: any) => {
-  const slug = props.params.slug;
+const Post = async (props: { params: Promise<{ slug: string }> }) => {
+  const slug = (await props.params).slug;
   const post = getPostContent(slug);
   return (
-    <div className="flex  relative ">
+    <div className="flex relative px-5">
       <div className="mx-auto flex w-full max-w-prose flex-col justify-start py-32">
         <div className=" text-primary  w-full overflow-hidden">
           <div className="">

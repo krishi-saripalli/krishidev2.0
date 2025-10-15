@@ -132,13 +132,19 @@ export default function ConwayGameOfLife({
     let lastHeight = 0;
     const handleResize = () => {
       if (!canvas) return;
-      const rect = canvas.getBoundingClientRect();
-      const newWidth = Math.floor(rect.width);
-      const newHeight = Math.floor(rect.height);
+      // Get the display size from the canvas's CSS layout
+      const displayWidth = canvas.clientWidth;
+      const displayHeight = canvas.clientHeight;
+      const dpr = window.devicePixelRatio || 1;
+
+      // Calculate the size the canvas should be in device pixels
+      const newWidth = Math.floor(displayWidth * dpr);
+      const newHeight = Math.floor(displayHeight * dpr);
 
       // Only update if size actually changed (avoid spam)
       if (newWidth === lastWidth && newHeight === lastHeight) return;
 
+      // Set the canvas internal resolution (accounts for DPR)
       canvas.width = newWidth;
       canvas.height = newHeight;
       gl.viewport(0, 0, canvas.width, canvas.height);
