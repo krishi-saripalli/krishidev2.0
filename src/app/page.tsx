@@ -1,72 +1,18 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import { FC } from "react";
-import Paragraph from "./components/ui/Paragraph";
+import { ConwayGameOfLife } from "./components/gameoflife";
 
 export const metadata: Metadata = {
   title: "Krishi Saripalli",
-  description: "About Myself",
+  description: "Conway's Game of Life",
 };
 
-const About: FC = () => {
+const Home: FC = () => {
   return (
-    <div className="flex text-primary relative">
-      <div className="mx-auto flex w-full max-w-prose flex-col justify-start py-32">
-        <div className="mx-auto max-w-prose ">
-          <Paragraph className="text-left pb-4">
-            I&#39;m an engineer at{" "}
-            <Link
-              href="https://bezi.com/"
-              className="text-primary hover:text-primary underline underline-offset-8 decoration-dashed decoration-2"
-            >
-              Bezi
-            </Link>{" "}
-            , where I work on tools to help people build games faster. I
-            graduated from Brown University with a degree in Computer Science.
-            There, I worked in the{" "}
-            <Link
-              href="https://visual.cs.brown.edu/"
-              className="text-primary hover:text-primary underline underline-offset-8 decoration-dashed decoration-2"
-            >
-              Brown Visual Computing
-            </Link>{" "}
-            group on procedural materials and generative modelling. Previously,
-            I worked at{" "}
-            <Link
-              href="https://moderntreasury.com/"
-              className="text-primary hover:text-primary underline underline-offset-8 decoration-dashed decoration-2"
-            >
-              Modern Treasury
-            </Link>{" "}
-            and{" "}
-            <Link
-              href="https://coinbase.com/"
-              className="text-primary hover:text-primary underline underline-offset-8 decoration-dashed decoration-2"
-            >
-              Coinbase
-            </Link>
-          </Paragraph>
-          <Paragraph className="text-left pb-4">
-            The best way to get in touch with me is at{" "}
-            <span className="whitespace-nowrap">kts[at]brown[dot]edu</span>. The
-            second best way is{" "}
-            <Link
-              href="https://twitter.com/krishi_sa"
-              className="text-primary hover:text-primary underline underline-offset-8 decoration-dashed decoration-2"
-            >
-              Twitter
-            </Link>
-            .
-          </Paragraph>
-          <Paragraph className="text-left pb-4">
-            I grew up in many different places, but I call California my home. I
-            spend vast amounts of my time cooking, longboarding and planning my
-            return to woodworking.
-          </Paragraph>
-        </div>
-      </div>
+    <div className="flex relative w-full h-full min-h-screen">
+      <ConwayGameOfLife gridWidth={100} gridHeight={80} updateInterval={120} />
     </div>
   );
 };
 
-export default About;
+export default Home;
