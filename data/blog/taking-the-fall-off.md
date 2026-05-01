@@ -4,16 +4,16 @@ subtitle: Why I'm taking a break from school and what I'm hoping to do with the 
 date: 06/07/2023
 ---
 
-Towards the end of my sophomore year in college, I started entertaining the idea of taking time away from school to pursue interests unrelated to computer science or math. It started mostly as a thought experiment to distract me from my coursework, but eventually became a way of reviving my dream of working with food in some capacity. At the time, I was in talks with an engineer at [Perfect Day](https://perfectday.com/) about the possibility of joining their team to work on a new project they were undertaking. For whatever reason, my plans fizzled out, and I decided to go back to school the following semester.
+Towards the end of my sophomore year in college, I started entertaining the idea of taking time away from school to pursue interests unrelated to computer science or math. It started mostly as a thought experiment to distract me from my coursework, but eventually became a way of reviving my dream of working with food in some capacity. At the time, I was in talks with an engineer at [Perfect Day](https://perfectday.com/) about the possibility of joining their team to work on a new project they were undertaking. For whatever reason, my plans fizzled out and I decided to go back to school the following semester.
 
-It's now almost a month after completing my junior year, and I've officially decided to take the upcoming Fall semester away from school. It's so official in fact, that it even shows up on my internal academic record, reading: "<em>
+It's now almost a month after completing my junior year, and I've officially decided to take the upcoming Fall semester away from school. It's so official, in fact, that it even shows up on my internal academic record, reading: "<em>
 Fall 2023: Leave of Absence - Employment</em>." I've mostly put my interests in food-related technology aside in favor of roles that are closer to software engineering, simply because that's what most of my coursework has trained me to do.
 
 Independent of the types of jobs I'm looking for, I've come up with a list of underlying reasons for my leave of absence, which I want to write about both for myself and others who may find themselves questioning whether a semester away from school is right for them.
 
 ### The Economy Sucks
 
-The job market as a new graduate is pretty terrible at the time of writing this. Even at a school like Brown, people have had offers pulled from them due to huge slashes in hiring budgets, which don't seem to be slowing down anytime soon. In order to mitigate the risk of having an offer pulled, and to wait for more opportunities to open back up, I've decided to wait out the storm by taking the Fall off.
+The job market as a new graduate is pretty terrible at the time of writing this. Even at a school like Brown, people have had offers pulled from them due to huge slashes in hiring budgets, which don't seem to be slowing down anytime soon. In order to mitigate the risk of having an offer pulled and to wait for more opportunities to open back up, I've decided to wait out the storm by taking the Fall off.
 
 ### Startups Are a (Better) Group Project
 

@@ -34,6 +34,22 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
+            '--tw-prose-body': '#0b47c8',
+            '--tw-prose-headings': '#0b47c8',
+            '--tw-prose-bold': '#082f8c',
+            '--tw-prose-links': '#0b47c8',
+            '--tw-prose-lead': '#475569',
+            '--tw-prose-counters': '#64748b',
+            '--tw-prose-bullets': '#94a3b8',
+            '--tw-prose-hr': 'rgba(11, 71, 200, 0.22)',
+            '--tw-prose-quotes': '#0b47c8',
+            '--tw-prose-quote-borders': 'rgba(11, 71, 200, 0.35)',
+            '--tw-prose-captions': '#64748b',
+            '--tw-prose-code': '#082f8c',
+            '--tw-prose-pre-code': '#334155',
+            '--tw-prose-pre-bg': '#f7faff',
+            '--tw-prose-th-borders': 'rgba(11, 71, 200, 0.2)',
+            '--tw-prose-td-borders': 'rgba(11, 71, 200, 0.12)',
             a: {
               color: '#0b47c8',
               textDecoration: 'underline',
@@ -63,7 +79,16 @@ module.exports = {
               color: '#0b47c8',
               fontFamily: 'Bitter, serif',
               fontWeight: 'normal',
-            }
+            },
+            pre: {
+              borderWidth: '1px',
+              borderColor: 'rgba(11, 71, 200, 0.14)',
+              borderRadius: '0.5rem',
+              boxShadow: 'none',
+            },
+            'pre code.hljs': {
+              backgroundColor: 'transparent',
+            },
           },
         },
       },
@@ -72,8 +97,4 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
   ],
-}
-
-a: {
-  '@apply text-[#0b47c8] underline underline-offset-8 decoration-dashed decoration-2 hover:text-[#0b47c8]'
 }
