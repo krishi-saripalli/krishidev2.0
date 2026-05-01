@@ -1,10 +1,26 @@
 import { Metadata } from "next";
 import { FC } from "react";
 import { ConwayGameOfLife } from "./components/gameoflife";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Krishi Saripalli",
-  description: "Conway's Game of Life",
+  openGraph: {
+    title: "Krishi Saripalli",
+    images: [
+      {
+        url: "/opengraph.png",
+        width: 1735,
+        height: 906,
+        alt: "Krishi Saripalli",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Krishi Saripalli",
+    images: ["/opengraph.png"],
+  },
 };
 
 const Home: FC = () => {
