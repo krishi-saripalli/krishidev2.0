@@ -1,6 +1,4 @@
 import "./globals.css";
-import "katex/dist/katex.min.css";
-import "highlight.js/styles/github.css";
 import { classname } from "./lib/utils";
 import Navbar from "./components/ui/Navbar";
 import React from "react";

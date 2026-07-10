@@ -1,6 +1,4 @@
-import React, { ReactNode } from "react";
-import Image from "next/image";
-import Paragraph from "./Paragraph";
+import React from "react";
 import Link from "next/link";
 import { PostMetadata } from "../PostMetadata";
 

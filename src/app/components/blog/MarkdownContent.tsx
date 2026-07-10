@@ -1,10 +1,5 @@
-"use client";
-
+import Image from "next/image";
 import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
-import rehypeHighlight from "rehype-highlight";
 
 interface MarkdownContentProps {
   content: string;
@@ -12,7 +7,21 @@ interface MarkdownContentProps {
 
 export function MarkdownContent({ content }: MarkdownContentProps) {
   return (
-    <Markdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex, rehypeHighlight]}>
+    <Markdown
+      components={{
+        img: ({ src, alt }) =>
+          src ? (
+            <Image
+              src={src}
+              alt={alt ?? ""}
+              width={1200}
+              height={800}
+              className="h-auto w-full"
+              sizes="(max-width: 768px) 100vw, 65ch"
+            />
+          ) : null,
+      }}
+    >
       {content}
     </Markdown>
   );
