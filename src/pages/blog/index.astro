@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/blog/PostList.astro';
+import { getPosts } from '../../lib/posts';
+const posts = await getPosts(import.meta.env.DEV);
+---
+<Base title="Writing">
+  <section class="writing-page page-enter" aria-label="Writing">
+    {posts.length ? <PostList posts={posts} /> : <p class="empty-state">Nothing here just yet.</p>}
+  </section>
+</Base>

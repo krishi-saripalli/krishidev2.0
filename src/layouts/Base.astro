@@ -1,0 +1,40 @@
+---
+import '@fontsource-variable/lora';
+import '@fontsource-variable/lora/wght-italic.css';
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+interface Props { title?: string; draft?: boolean; type?: 'website' | 'article'; }
+const { title, draft = false, type = 'website' } = Astro.props;
+const pageTitle = title ?? 'Krishi Saripalli';
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
+const imageUrl = Astro.site ? new URL('/opengraph.png', Astro.site).href : '/opengraph.png';
+const imageAlt = 'A large finely dotted-outline Lora K on a deep navy background';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0f172a" />
+    <title>{pageTitle}</title>
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:type" content={type} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={imageAlt} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content={imageAlt} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    {draft && <meta name="robots" content="noindex, nofollow" />}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Navbar />
+    <main id="main" tabindex="-1"><slot /></main>
+  </body>
+</html>

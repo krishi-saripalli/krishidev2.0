@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title">
+  <title id="title">A large solid-white Lora K on a deep navy background</title>
+  <!-- Lora Regular (400), converted to paths. All variants use the same geometry.
+       Background: oklch(20.8% 0.042 265.755), nearest sRGB #0f172b.
+       Glyph bounds: 2.5px to 627.5px vertically; the 4px outline stays inside the canvas. -->
+  <rect width="1200" height="630" fill="#0f172b" />
+  <path d="M170 665V632Q208 630 222 614.5Q236 599 237.5 571.5Q239 544 239 509V77Q239 57 240 38.5Q241 20 242 5Q224 6 206 7Q188 8 170 9V-35H395V-2Q358 -1 343.5 15Q329 31 327.5 58Q326 85 326 121V285H401L526 88Q539 68 558 44Q577 20 597 4Q582 5 566.5 5Q551 5 536 6V-35H751V-2Q709 1 676 12Q643 23 613 50.5Q583 78 549 133L451 289Q480 306 498 328.5Q516 351 534 374L646 523Q684 573 708.5 596.5Q733 620 752.5 626Q772 632 793 632V665H671Q661 665 644.5 651Q628 637 609 614.5Q590 592 570 567L450 405Q431 380 412 357.5Q393 335 375 324L326 325V546Q326 573 325.5 592.5Q325 612 323 625Q341 624 359 623Q377 622 395 621V665Z" transform="translate(51.589285714 33.750000000) scale(0.892857142857)" fill="#ffffff" />
+</svg>

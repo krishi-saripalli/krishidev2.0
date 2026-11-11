@@ -1,0 +1,65 @@
+---
+const pathname = Astro.url.pathname;
+---
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="/" class="wordmark">Krishi Saripalli</a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="/blog/" aria-current={pathname.startsWith('/blog') ? 'page' : undefined}>Writing</a>
+      <a href="https://github.com/krishi-saripalli">GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
+  </div>
+  <nav id="site-menu" class="menu-panel" aria-label="Main navigation" hidden>
+    <a href="/" aria-current={pathname === '/' ? 'page' : undefined}>Home</a>
+    <a href="/blog/" aria-current={pathname.startsWith('/blog') ? 'page' : undefined}>Writing</a>
+    <a href="https://github.com/krishi-saripalli">GitHub <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle')!;
+  const menu = document.querySelector<HTMLElement>('#site-menu')!;
+  const main = document.querySelector<HTMLElement>('main')!;
+  const compact = matchMedia('(width < 768px)');
+
+  function setOpen(open: boolean, restoreFocus = true) {
+    open = open && compact.matches;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menu.hidden = !open;
+    main.inert = open;
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) menu.querySelector('a')?.focus();
+    else if (restoreFocus) toggle.focus();
+  }
+
+  toggle.addEventListener('click', () => setOpen(menu.hidden));
+  document.querySelectorAll<HTMLAnchorElement>('.site-header a').forEach(link => {
+    link.addEventListener('click', event => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const destination = new URL(link.href);
+      const samePage = destination.origin === location.origin
+        && destination.pathname.replace(/\/$/, '') === location.pathname.replace(/\/$/, '')
+        && destination.search === location.search
+        && destination.hash === location.hash;
+
+      if (samePage) event.preventDefault();
+      if (!menu.hidden) setOpen(false, samePage);
+    });
+  });
+  compact.addEventListener('change', () => {
+    const focusWasInMenu = menu.contains(document.activeElement) || document.activeElement === toggle;
+    setOpen(false, false);
+    if (!compact.matches && focusWasInMenu) document.querySelector<HTMLAnchorElement>('.desktop-nav a')?.focus();
+  });
+  document.addEventListener('keydown', event => {
+    if (menu.hidden) return;
+    if (event.key === 'Escape') setOpen(false);
+    if (event.key === 'Tab') {
+      const elements = [toggle, ...menu.querySelectorAll<HTMLAnchorElement>('a')];
+      const index = elements.indexOf(document.activeElement as HTMLButtonElement);
+      event.preventDefault();
+      elements[(index + (event.shiftKey ? -1 : 1) + elements.length) % elements.length].focus();
+    }
+  });
+</script>

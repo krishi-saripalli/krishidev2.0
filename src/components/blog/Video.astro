@@ -1,0 +1,17 @@
+---
+interface Props { src: string; caption?: string; poster?: string; loop?: boolean; autoplay?: boolean; }
+const { src, caption, poster, loop = true, autoplay = true } = Astro.props;
+---
+<figure><video src={src} poster={poster} muted loop={loop} playsinline controls preload="metadata" data-autoplay={autoplay ? '' : undefined}></video>{caption && <figcaption>{caption}</figcaption>}</figure>
+<script>
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  document.querySelectorAll<HTMLVideoElement>('video[data-autoplay]').forEach(video => {
+    const observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !reduce.matches && !document.hidden) void video.play().catch(() => {});
+      else video.pause();
+    });
+    observer.observe(video);
+    reduce.addEventListener('change', () => { if (reduce.matches) video.pause(); });
+    document.addEventListener('visibilitychange', () => { if (document.hidden) video.pause(); });
+  });
+</script>
