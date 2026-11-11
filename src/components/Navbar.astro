@@ -23,18 +23,18 @@ const pathname = Astro.url.pathname;
   const main = document.querySelector<HTMLElement>('main')!;
   const compact = matchMedia('(width < 768px)');
 
-  function setOpen(open: boolean, restoreFocus = true) {
+  function setOpen(open: boolean, restoreFocus = true, focusFirst = true) {
     open = open && compact.matches;
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     menu.hidden = !open;
     main.inert = open;
     document.body.style.overflow = open ? 'hidden' : '';
-    if (open) menu.querySelector('a')?.focus();
+    if (open && focusFirst) menu.querySelector('a')?.focus();
     else if (restoreFocus) toggle.focus();
   }
 
-  toggle.addEventListener('click', () => setOpen(menu.hidden));
+  toggle.addEventListener('click', event => setOpen(menu.hidden, true, event.detail === 0));
   document.querySelectorAll<HTMLAnchorElement>('.site-header a').forEach(link => {
     link.addEventListener('click', event => {
       if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;

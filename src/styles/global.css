@@ -9,7 +9,9 @@ button { cursor: pointer; }
 button, input { background: transparent; }
 a, button { -webkit-tap-highlight-color: transparent; }
 a:hover { text-decoration: underline; }
-:focus-visible { outline: 2px solid white; outline-offset: 6px; border-radius: 2px; }
+:focus { outline: none; }
+a:focus-visible { text-decoration: underline; }
+button:focus-visible { opacity: .65; }
 [hidden] { display: none !important; }
 main:focus { outline: none; }
 h1, h2, h3 { font-weight: 500; line-height: 1.25; }
