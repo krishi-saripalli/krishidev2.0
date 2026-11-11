@@ -21,7 +21,7 @@ These were architecture references. Nathan's article text, illustrations, and an
 
 ## Choices for this site
 
-The homepage remains blank at the owner's request. The existing Lora family is retained, including italics, and self-hosted with Fontsource. All surfaces share `oklch(20.8% 0.042 265.755)`; text, rules, and syntax highlighting use white and white-opacity variations. The secondary `oklch(37.2% 0.044 257.287)` outlines the Open Graph monogram; a lighter mix is used for readable dates. Navigation shares the page background.
+The homepage remains blank at the owner's request. The existing Lora family is retained, including italics, and self-hosted with Fontsource. All surfaces share `oklch(20.8% 0.042 265.755)`; text, rules, and syntax highlighting use white and white-opacity variations. A lighter mix of the secondary `oklch(37.2% 0.044 257.287)` is used for readable dates. The Open Graph monogram uses a finely dotted `#64748b` outline. Navigation shares the page background.
 
 Astro replaces Next.js entirely because the current site is a static publication. Markdown and MDX become HTML at build time. There is no React client runtime. Small vanilla scripts enhance the menu, copying, images, diagrams, and animations. A CMS, database, and application server would add overhead without helping the current authoring workflow.
 
@@ -34,3 +34,7 @@ The writing features cover the reference's core publishing experience: math, cod
 Removed Next.js, React, Tailwind, the typography plugin, class-merging utilities, old ESLint configuration, the second font, obsolete TypeScript paths, and the old fullscreen Game of Life implementation. Previous versions remain in Git history. Kept legacy public images to preserve archived post references, and moved the two originally unlisted articles to `content/archive/`; the content loader never reads that folder.
 
 The content schema defaults new articles to drafts. `writing-lab` is a Git-ignored, local-only demonstration and is explicitly excluded from production content loading. Production builds contain no draft article routes. As with any static build, drafts are an editorial visibility feature, not a place to store credentials or private data.
+
+## Hosting
+
+Cloudflare Pages builds the `main` branch with `npm run build` and serves `dist/`. `.node-version` pins the build runtime. The build environment sets `SITE_URL=https://www.krishisaripalli.com` for canonical and social-image URLs. DNS and registration remain at Squarespace: `www` points to `krishisaripalli.pages.dev`, and the root domain forwards to `www` while preserving paths.
