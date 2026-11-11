@@ -20,7 +20,7 @@ p { margin: 0 0 1.3em; }
 .wordmark { font-size: 32px; letter-spacing: -.035em; z-index: 12; }
 .wordmark:hover { text-decoration: none; opacity: .8; }
 .desktop-nav { display: flex; align-items: center; gap: 32px; font-size: 20px; }
-.desktop-nav span { font-size: .8em; }
+.external-link-icon { display: inline-block; width: .7em; height: .7em; vertical-align: baseline; }
 .desktop-nav a[aria-current=page] { text-decoration: underline; text-decoration-thickness: 1px; }
 .menu-toggle { display: none; width: 44px; height: 44px; border: 0; position: relative; z-index: 12; }
 .menu-toggle span { position: absolute; left: 10px; width: 24px; height: 1.5px; background: white; top: 22px; transform: translateY(-4px); transition: transform 180ms ease; }
@@ -31,7 +31,6 @@ p { margin: 0 0 1.3em; }
 .menu-panel a { text-decoration: none; transition: opacity 150ms; }
 .menu-panel a:hover { opacity: .65; }
 .menu-panel a[aria-current=page] { text-decoration: underline; text-decoration-thickness: 1px; }
-.menu-panel span { font-size: .65em; }
 .blank-home { min-height: calc(100svh - 104px); }
 .writing-page { max-width: 760px; margin: 24px auto 100px; padding: 0 32px; }
 .eyebrow { font-family: var(--font); font-size: 17px; color: var(--muted); font-weight: 500; }
