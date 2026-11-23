@@ -57,6 +57,8 @@ h2:hover .heading-anchor, h3:hover .heading-anchor, .heading-anchor:focus-visibl
 .prose th { font-weight: 600; }
 .footnotes { border-top: 1px solid var(--line); margin-top: 60px; padding-top: 20px; font-size: 16px; color: var(--muted); }
 .prose .footnotes h2 { font-size: 20px; }
+.footnote-back-icon { display: inline-block; width: 1em; height: .75em; vertical-align: baseline; }
+.prose [data-footnote-backref]:focus-visible { outline: 1px solid currentColor; outline-offset: 2px; }
 .post-footer { max-width: 680px; margin: 72px auto 0; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 16px 32px; font-size: 16px; color: var(--muted); }
 .animation-figure canvas { width: 100%; display: block; }
 .animation-figure figcaption { display: flex; justify-content: space-between; gap: 20px; }

@@ -4,7 +4,7 @@ import { unified } from '@astrojs/markdown-remark';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import rehypePrettyCode from 'rehype-pretty-code';
-import { rehypeDiagrams } from './src/lib/markdown.mjs';
+import { footnoteBackContent, rehypeDiagrams } from './src/lib/markdown.mjs';
 
 export default defineConfig({
   site: process.env.SITE_URL,
@@ -15,6 +15,7 @@ export default defineConfig({
     syntaxHighlight: false,
     processor: unified({
     remarkPlugins: [remarkMath],
+    remarkRehype: { footnoteBackContent },
     rehypePlugins: [rehypeDiagrams, rehypeKatex, [rehypePrettyCode, {
       keepBackground: false,
       theme: {
