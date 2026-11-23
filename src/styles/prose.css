@@ -55,4 +55,4 @@ h2:hover .heading-anchor, h3:hover .heading-anchor, .heading-anchor:focus-visibl
 .image-dialog::backdrop { background: rgb(0 0 0 / .8); }
 .image-dialog img { display: block; max-width: 100%; max-height: 76svh; object-fit: contain; margin: auto; }
 .image-dialog button { position: absolute; top: 8px; right: 14px; border: 0; background: transparent; color: white; font: inherit; }
-@media (max-width: 600px) { .post-page { margin-top: 20px; padding: 0 24px; } .post-date { font-size: 17px; } .prose { font-size: 18px; } .prose h2 { font-size: 25px; } .post-header { margin-bottom: 28px; } .prose pre { padding: 28px 12px 18px; font-size: 14px; } }
+@media (max-width: 600px) { .post-page { margin-top: 20px; padding: 0 24px; } .post-date { font-size: 17px; } .prose { font-size: 18px; } .prose h2 { font-size: 25px; } .post-header { margin-bottom: 28px; } .prose pre { padding: 28px 12px 18px; font-size: 13px; line-height: 1.6; } }
