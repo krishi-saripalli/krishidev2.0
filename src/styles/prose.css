@@ -29,7 +29,19 @@ h2:hover .heading-anchor, h3:hover .heading-anchor, .heading-anchor:focus-visibl
 .prose figcaption { color: var(--muted); font-size: 15px; line-height: 1.6; margin-top: 12px; }
 .prose code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .82em; }
 .prose :not(pre) > code { border: 1px solid var(--line); border-radius: 3px; padding: .12em .3em; }
-.prose pre { margin: 0; padding: 24px 20px; overflow-x: auto; border: 1px solid var(--line); font-size: 15px; line-height: 1.8; background: transparent !important; tab-size: 2; }
+.prose pre {
+  margin: 0;
+  padding: 24px 20px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  font-size: 15px;
+  line-height: 1.8;
+  background: transparent !important;
+  tab-size: 2;
+  /* Mobile browsers can inflate text in longer code snippets. */
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
 .prose pre code { font-size: inherit; display: grid; min-width: max-content; }
 .prose [data-rehype-pretty-code-figure] { position: relative; }
 .prose [data-rehype-pretty-code-title] { padding: 9px 70px 9px 14px; border: 1px solid var(--line); border-bottom: none; font-family: ui-monospace, monospace; color: var(--muted); font-size: 14px; margin: 0; }
