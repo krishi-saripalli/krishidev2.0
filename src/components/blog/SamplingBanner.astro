@@ -1,0 +1,49 @@
+<figure class="sampling-banner" aria-label="Cells in a grid light up one at a time, leaving sampled cells dimmed">
+  <canvas aria-hidden="true"></canvas>
+</figure>
+
+<script>
+  import { mountCanvas } from '../../lib/canvas';
+
+  const canvas = document.querySelector<HTMLCanvasElement>('.sampling-banner canvas');
+  if (canvas) {
+    const columns = 20, rows = 7, steps = 40;
+    const sequences = [17, 83, 149].map(seed => {
+      const cells = Array.from({ length: columns * rows }, (_, i) => i);
+      for (let i = cells.length - 1; i > 0; i--) {
+        seed = (seed * 1664525 + 1013904223) >>> 0;
+        const j = seed % (i + 1);
+        [cells[i], cells[j]] = [cells[j], cells[i]];
+      }
+      return cells.slice(0, steps);
+    });
+    mountCanvas(canvas, (context, width, height, seconds) => {
+      const cellWidth = width / columns, cellHeight = height / rows;
+      const elapsed = seconds * 7;
+      const time = elapsed % 4.15;
+      const reset = time < 3.1 ? 1 : Math.max(0, (4.15 - time) / 1.05);
+      const sequence = sequences[Math.floor(elapsed / 4.15) % sequences.length];
+
+      sequence.forEach((cell, index) => {
+        const age = time - index * .0625;
+        if (age < 0) return;
+        const opacity = .2 * reset;
+        context.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+        context.fillRect((cell % columns) * cellWidth, Math.floor(cell / columns) * cellHeight, cellWidth, cellHeight);
+      });
+
+      context.strokeStyle = 'rgba(255, 255, 255, .3)';
+      context.lineWidth = 1;
+      context.beginPath();
+      for (let x = 0; x <= columns; x++) {
+        const position = Math.min(width - .5, Math.max(.5, x * cellWidth));
+        context.moveTo(position, 0); context.lineTo(position, height);
+      }
+      for (let y = 0; y <= rows; y++) {
+        const position = Math.min(height - .5, Math.max(.5, y * cellHeight));
+        context.moveTo(0, position); context.lineTo(width, position);
+      }
+      context.stroke();
+    }, width => width * rows / columns);
+  }
+</script>

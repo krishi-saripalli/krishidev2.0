@@ -6,51 +6,11 @@ if (article) {
     anchor.className = 'heading-anchor'; anchor.href = `#${heading.id}`; anchor.textContent = '#';
     anchor.setAttribute('aria-label', `Link to ${heading.textContent}`); heading.append(anchor);
   });
-  article.querySelectorAll<HTMLElement>('[data-rehype-pretty-code-figure]').forEach(figure => {
-    const code = figure.querySelector('pre code');
-    if (!code) return;
-    const button = document.createElement('button'); button.className = 'copy-code'; button.textContent = 'Copy';
-    button.setAttribute('aria-label', 'Copy code'); button.setAttribute('aria-live', 'polite');
-    button.addEventListener('click', async () => {
-      try { await navigator.clipboard.writeText(code.textContent ?? ''); button.textContent = 'Copied'; }
-      catch { button.textContent = 'Select to copy'; }
-      window.setTimeout(() => { button.textContent = 'Copy'; }, 2000);
-    });
-    figure.append(button);
-  });
   article.querySelectorAll('table').forEach(table => {
     const wrapper = document.createElement('div'); wrapper.className = 'table-scroll'; wrapper.tabIndex = 0;
     wrapper.setAttribute('role', 'region'); wrapper.setAttribute('aria-label', 'Scrollable table');
     table.before(wrapper); wrapper.append(table);
   });
-  // Keep original footnotes as the canonical keyboard/screen-reader navigation targets.
-  const margin = document.querySelector<HTMLElement>('.sidenotes');
-  const renderNotes = () => {
-    if (!margin) return;
-    margin.replaceChildren();
-    if (!matchMedia('(min-width: 1101px)').matches) return;
-    const top = article.getBoundingClientRect().top;
-    let bottom = 0;
-    const seen = new Set<string>();
-    article.querySelectorAll<HTMLAnchorElement>('a[data-footnote-ref]').forEach(ref => {
-      if (seen.has(ref.hash)) return;
-      seen.add(ref.hash);
-      const target = document.getElementById(decodeURIComponent(ref.hash.slice(1)));
-      if (!target) return;
-      const note = document.createElement('div'); note.className = 'sidenote'; note.setAttribute('aria-hidden', 'true');
-      const number = document.createElement('span'); number.className = 'sidenote-number'; number.textContent = ref.textContent;
-      note.append(number);
-      target.childNodes.forEach(child => note.append(child.cloneNode(true)));
-      note.querySelectorAll('[id]').forEach(child => child.removeAttribute('id'));
-      note.querySelectorAll('[data-footnote-backref]').forEach(child => child.remove());
-      note.querySelectorAll('a').forEach(link => link.tabIndex = -1);
-      margin.append(note);
-      const offset = Math.max(bottom, ref.getBoundingClientRect().top - top);
-      note.style.top = `${offset}px`; bottom = offset + note.offsetHeight + 20;
-    });
-  };
-  const resize = new ResizeObserver(renderNotes); resize.observe(article); document.fonts.ready.then(renderNotes);
-
   const dialog = document.createElement('dialog'); dialog.className = 'image-dialog';
   const close = document.createElement('button'); close.textContent = 'Close ×'; close.addEventListener('click', () => dialog.close());
   const image = document.createElement('img'); dialog.append(close, image); document.body.append(dialog);

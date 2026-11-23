@@ -21,10 +21,10 @@ p { margin: 0 0 1.3em; }
 .nav-inner { max-width: 1160px; margin: auto; height: 104px; padding: 0 44px; display: flex; justify-content: space-between; align-items: center; }
 .wordmark { font-size: 32px; letter-spacing: -.035em; z-index: 12; }
 .wordmark:hover { text-decoration: none; opacity: .8; }
-.desktop-nav { display: flex; align-items: center; gap: 32px; font-size: 20px; }
+.desktop-nav { display: flex; align-items: center; gap: 32px; margin-left: auto; font-size: 20px; }
 .external-link-icon { display: inline-block; width: .7em; height: .7em; vertical-align: baseline; }
 .desktop-nav a[aria-current=page] { text-decoration: underline; text-decoration-thickness: 1px; }
-.menu-toggle { display: none; width: 44px; height: 44px; border: 0; position: relative; z-index: 12; }
+.menu-toggle { display: none; width: 44px; height: 44px; margin-left: auto; border: 0; position: relative; z-index: 12; }
 .menu-toggle span { position: absolute; left: 10px; width: 24px; height: 1.5px; background: white; top: 22px; transform: translateY(-4px); transition: transform 180ms ease; }
 .menu-toggle span + span { transform: translateY(4px); }
 .menu-toggle[aria-expanded=true] span { transform: rotate(45deg); }

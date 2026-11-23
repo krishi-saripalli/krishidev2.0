@@ -34,7 +34,7 @@ const imageAlt = 'A large finely dotted-outline Lora K on a deep navy background
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <Navbar />
+    <Navbar hideName={type === 'article'} />
     <main id="main" tabindex="-1"><slot /></main>
   </body>
 </html>

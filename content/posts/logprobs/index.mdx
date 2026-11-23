@@ -1,0 +1,222 @@
+---
+title: "Sampling Without Replacement with Log-Probabilities"
+description: ""
+date: 2026-11-21
+tags: [ML, PyTorch]
+draft: false
+featured: true
+---
+
+Writing code to sample a sequence from a categorical distribution without replacement has been discussed extensively online.[^wijk26][^vieira14]
+I recently found myself in a situation where I needed the log-probability of a sampled sequence in addition to the sample itself.
+
+For completeness, we have two goals.
+
+1.  Draw an ordered sequence of $k$ samples _without_ replacement from a categorical distribution over $n$ possible values.
+
+    $$
+    a = (a_1, a_2, \ldots, a_k)
+    $$
+
+2.  Compute the log-probability of sampling this particular ordering.
+
+    $$
+    \begin{align*}
+    \log P(A=(a_1, a_2, \ldots, a_k))
+    \end{align*}
+    $$
+
+A common motivation for this is that certain policy gradient methods require
+knowing the log-probabilities of sampled actions. Most language model RL treats an action as the single token sampled at each decoding step, where the log-probability of that token is immediately accessible. Formulating
+an action as a sequence of elements sampled without replacement is less common and requires a little more work.
+
+If we just cared about sampling, the snippet below would suffice.
+
+```python
+def sample(probs,K):
+    return torch.multinomial(probs, num_samples=K, replacement=False)
+```
+
+The problem is that `torch.multinomial` doesn't provide a way to access `log_prob` in the
+same way that `torch.distributions` objects like `Categorical` do.
+
+```python
+from torch.distributions import Categorical
+
+dist = Categorical(probs=probs)
+indices = dist.sample((K,))  # with replacement
+log_probs = dist.log_prob(indices)
+```
+
+It's worth thinking about how you would calculate the probability of a sampled sequence at all. Let's work through a simple example where $n = 3$ and $k = 2$. Our samples can
+take on values $\{R, G, B\}$ with probabilities $\{0.7, 0.2, 0.1\}$, respectively.
+
+We would like to calculate the probability of drawing $R$ and then $B$.
+
+$$
+\begin{align*}
+P((R, B))
+\end{align*}
+$$
+
+We can write this probability using the chain rule.
+
+$$
+\begin{align*}
+P((R, B))
+&= P(a_1=R)\,P(a_2=B\mid a_1=R) \\
+\end{align*}
+$$
+
+The first term in the product is straightforward. The second term requires us to renormalize our distribution to avoid re-sampling old values.
+
+$$
+\begin{align*}
+P(a_2=B \mid a_1=R)
+&= \frac{p(B)}{p(G)+p(B)}\\
+&= \frac{p(B)}{1-p(R)}\\
+&= \frac{0.1}{1-0.7}\\
+&= \frac{1}{3}
+\end{align*}
+$$
+
+Multiplying the two terms gives us the probability of the sequence.
+
+$$
+\begin{align*}
+P(A=(R, B)) = \frac{7}{10} \cdot \frac{1}{3} = \frac{7}{30}
+\end{align*}
+$$
+
+Here's what it looks like to draw $k$ samples, renormalizing the distribution after each draw to avoid resampling the same value.
+
+```python
+def sample_and_logprob(probs,K):
+    logprobs = probs.new_zeros(K)
+    samples = probs.new_zeros(K, dtype=torch.int64)
+
+    for k in range(K):
+        dist = torch.distributions.Categorical(probs=probs)
+        sample_idx = dist.sample()
+        sample_prob = dist.probs[sample_idx]
+
+        samples[k] = sample_idx
+        logprobs[k] = sample_prob
+
+        if k + 1 < K:
+            new_probs = probs.clone()
+            new_probs[sample_idx] = 0.0
+            probs = new_probs / new_probs.sum()
+
+    return samples, torch.log(logprobs).sum()
+```
+
+Hopefully, I'm not alone in thinking that this code offends the eyes. It's also probably not terribly efficient for large $k$, given that none of this is vectorized. I found an
+interesting way of rewriting the code, courtesy of Gemini 4 Carbon. It's confusing at first glance but clever once you see how it works.
+
+## The Plackett–Luce Distribution
+
+For reasons[^kool19] [^pervez], independently perturbing the log-probability of each value in the distribution with standard Gumbel noise and taking the $k$ largest values is equivalent
+to sampling $k$ values without replacement. This is commonly referred to as the Gumbel-top-$k$ trick.
+
+A draw $u_i \sim \mathcal{U}[0,1]$ can be transformed into a sample from a standard Gumbel distribution as follows.
+
+$$
+\begin{align*}
+g_i = -\log(-\log(u_i))
+\end{align*}
+$$
+
+```python
+noise = -1.0 * (-1.0 * torch.empty_like(probs).uniform_().log()).log()
+samples = (probs.log() + noise).topk(K, dim=-1).indices
+```
+
+It is also the case that $-\log(u_i)$ is a sample from a standard exponential distribution, so we can shorten the code a bit.
+
+```python
+noise = -1.0 * torch.empty_like(probs).exponential_().log()
+samples = (probs.log() + noise).topk(K, dim=-1).indices
+```
+
+This is equivalent to what `torch.multinomial` does when sampling without replacement.
+
+Now we need to figure out how to obtain the log-probability of a sampled sequence. Continuing with our simple distribution,
+let's consider sampling the sequence $(G, B, R)$. At each draw, the denominator is the total probability mass of the remaining elements.
+
+| Sample | Numerator | Denominator | Probability         | New denominator   |
+| :----: | :-------: | :---------: | :------------------ | :---------------- |
+|  $G$   |   $0.2$   |    $1.0$    | $0.2 / 1.0 = 0.2$   | $1.0 - 0.2 = 0.8$ |
+|  $B$   |   $0.1$   |    $0.8$    | $0.1 / 0.8 = 0.125$ | $0.8 - 0.1 = 0.7$ |
+|  $R$   |   $0.7$   |    $0.7$    | $0.7 / 0.7 = 1.0$   | -                 |
+
+Keep this table in mind. The code uses its column names. We'll start by forming the numerators
+by gathering the probabilities of the sampled values in order.
+
+```python
+numerators = probs.gather(-1,samples) # [0.2, 0.1, 0.7]
+```
+
+To find the denominators, we can think about reversing the process of subtracting probability mass at each iteration
+and instead starting from the probability mass that remained before the last sample. We can add back mass in reverse sample order to find the previous denominators.
+
+```python
+remaining_mass = probs.scatter(-1, samples[..., :-1], 0.0).sum(dim=-1,keepdim=True)  # sum([0.7, 0.0, 0.0]) = 0.7
+```
+
+`remaining_mass` is the denominator before the very last sample's probability calculation. For draw $i$, add back the numerators from draw $i$ through draw $k-1$.
+
+```python
+reversed_numerators = numerators.flip(-1)  # [0.7, 0.1, 0.2]
+denominators = torch.cumsum(torch.cat((remaining_mass, reversed_numerators[..., 1:]), -1), dim=-1).flip(-1)  # [1.0, 0.8, 0.7]
+```
+
+The reason for doing this in reverse order with addition wasn't immediately clear to me. In fact, when $k$ is small, it is typically slower to have to scan backward from the $n-1$-th
+denominator than it it is to work forward and subtract probability mass like we did in the first function. The reason is that when probabilities are close to 0 or 1, subtraction risks loss of precision
+which can result in numerical instability.
+
+Imagine the first iteration of the forward method where the sampled probability is $\frac{511}{512} \approx 0.998046 $. I should expect that my subsequent denominator is $1 - \frac{511}{512} \approx 0.001953$. In `bfloat16`
+the result of this subtraction rounds to 0, resulting in division by zero. Accumulation avoids this problem.
+
+Here's the full function.
+
+```python
+def sample_and_logprob(probs,K):
+    noise = -1.0 * torch.empty_like(probs).exponential_().log()
+    samples = (probs.log() + noise).topk(K, dim=-1).indices
+
+    numerators = probs.gather(-1,samples)
+    remaining_mass = probs.scatter(-1, samples[..., :-1], 0.0).sum(dim=-1,keepdim=True)
+
+    reversed_numerators = numerators.flip(-1)
+    denominators = torch.cumsum(torch.cat((remaining_mass, reversed_numerators[..., 1:]), -1), dim=-1).flip(-1)
+
+    return samples, torch.log(numerators / denominators).sum(dim=-1)
+```
+
+It turns out this describes sampling from a **Plackett–Luce** distribution[^wiki] with the following probability mass function.
+
+$$
+\begin{align*}
+\Pr(A=a\mid K)
+=
+\prod_{k=1}^{K}
+\frac{p_{a_k}}{1-\displaystyle\sum_{j=1}^{k-1}p_{a_j}}.
+\end{align*}
+$$
+
+It's curious that `torch.distributions` doesn't support this out of the box, though it didn't end up being that much code. JAX does have support via `PlackettLuce.experimental_sample_and_log_prob` from TensorFlow Probability[^tfp], but only for sampling full permutations (i.e when $k = n$).
+
+[^wijk26]: https://klaswijk.github.io/blog/2026/topk_sampling_beyond_gumbel_topk/
+
+[^vieira14]: https://timvieira.github.io/blog/gumbel-max-trick/
+
+[^torch21]: https://discuss.pytorch.org/t/how-to-compute-the-log-prob-of-a-weighted-random-sample-without-replacement/110643
+
+[^kool19]: https://arxiv.org/abs/1903.06059
+
+[^pervez]: https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/DL2/sampling/subsets.html
+
+[^wiki]: https://en.wikipedia.org/wiki/Bradley%E2%80%93Terry_model#Plackett%E2%80%93Luce_model
+
+[^tfp]: https://www.tensorflow.org/probability/api_docs/python/tfp/distributions/PlackettLuce?auto_signin=false#experimental_sample_and_log_prob

@@ -1,10 +1,12 @@
 ---
 import ExternalLinkIcon from './ExternalLinkIcon.astro';
+interface Props { hideName?: boolean; }
+const { hideName = false } = Astro.props;
 const pathname = Astro.url.pathname;
 ---
 <header class="site-header">
   <div class="nav-inner">
-    <a href="/" class="wordmark">Krishi Saripalli</a>
+    {!hideName && <a href="/" class="wordmark">Krishi Saripalli</a>}
     <nav class="desktop-nav" aria-label="Main navigation">
       <a href="/blog/" aria-current={pathname.startsWith('/blog') ? 'page' : undefined}>Writing</a>
       <a href="https://github.com/krishi-saripalli">GitHub <ExternalLinkIcon /></a>
