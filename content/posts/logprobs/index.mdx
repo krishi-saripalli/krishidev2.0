@@ -111,7 +111,7 @@ def sample_and_logprob(probs,K):
     return samples, torch.log(logprobs).sum()
 ```
 
-Hopefully, I'm not alone in thinking that this code offends the eyes. It's also probably not terribly efficient for large $k$, given that none of this is vectorized. I found an
+Hopefully I'm not alone in thinking that this code is offensive to read. It's also probably not terribly efficient for large $k$, given that none of this is vectorized. I found an
 interesting way of rewriting the code, courtesy of Gemini 4 Carbon. It's confusing at first glance but clever once you see how it works.
 
 ## The Plackett–Luce Distribution
